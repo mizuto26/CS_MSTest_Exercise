@@ -483,4 +483,5 @@ $RECYCLE.BIN/
 
 .vscode
 TestResults/
+CoverageReport/
 

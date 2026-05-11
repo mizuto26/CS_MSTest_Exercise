@@ -12,16 +12,13 @@ public class CalculatorDataRowTests
         calculator = new Calculator();
     }
 
-    [Ignore("テストがスキップされることを確認する")]
     [DataTestMethod]
-    [DataRow(1, 2, 3, DisplayName = "テストケース1:両方に値がある場合")]
-    [DataRow(null, 2, null, DisplayName = "テストケース2:引数xがnullの場合")]
-    [DataRow(1, null, null, DisplayName = "テストケース3:引数yがnull の場合")]
-    [DataRow(null, null, null, DisplayName = "テストケース4:両方の引数がnullの場合")]
+    [DataRow(10, 0, DisplayName = "テストケース5:10 ÷ 0")]
+    [DataRow(20, 0, DisplayName = "テストケース6:20 ÷ 0")]
 
-    public void Add_ReturnsExpectedResult(int? x, int? y, int? expected)
+    public void Div_ShouldThrowArgumentException_WhenInvalidInput(int x, int y)
     {
-        var result = calculator!.Add(x, y);
-        Assert.AreEqual(expected, result);
+        var exception = Assert.ThrowsException<ArgumentException>(() => calculator!.Div(x, y));
+        Assert.AreEqual("ゼロ除算はできません。", exception.Message);
     }
 }
