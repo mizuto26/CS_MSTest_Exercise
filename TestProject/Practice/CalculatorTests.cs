@@ -7,6 +7,14 @@ namespace TestProject.Practice;
 [TestClass]
 public class CalculatorTests
 {
+    private Calculator? calculator;
+
+    [TestInitialize]
+    public void SetUp()
+    {
+        calculator = new Calculator();
+    }
+
     [TestMethod]
     public void Add_ShouldReturnSum_WhenBothHaveValues()
     {
@@ -14,7 +22,7 @@ public class CalculatorTests
         int? x = 1;
         int? y = 2;
         // Act(実行)
-        var result = Calculator.Add(x, y);
+        var result = calculator!.Add(x, y);
         // Assert(確認)
         Assert.AreEqual(3, result);
     }
@@ -26,7 +34,7 @@ public class CalculatorTests
         int? x = null;
         int? y = 2;
         // Act(実行)
-        var result = Calculator.Add(x, y);
+        var result = calculator!.Add(x, y);
         // Assert(確認)
         Assert.IsNull(result);
     }
@@ -38,7 +46,7 @@ public class CalculatorTests
         int? x = 1;
         int? y = null;
         // Act(実行)
-        var result = Calculator.Add(x, y);
+        var result = calculator!.Add(x, y);
         // Assert(確認)
         Assert.IsNull(result);
     }
@@ -50,7 +58,7 @@ public class CalculatorTests
         int? x = null;
         int? y = null;
         // Act(実行)
-        var result = Calculator.Add(x, y);
+        var result = calculator!.Add(x, y);
         // Assert(確認)
         Assert.IsNull(result);
     }

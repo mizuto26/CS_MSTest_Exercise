@@ -14,7 +14,7 @@ public class ScoreService
     /// <returns>
     /// 合格点以上の場合はtrue(合格)、合格点未満の場合はfalse(不合格)を返す
     /// </returns>
-    public static bool IsPassed(int score)
+    public bool IsPassed(int score)
     {
         // 合格点の基準を定義する
         // この演習では 60 点以上を合格とする

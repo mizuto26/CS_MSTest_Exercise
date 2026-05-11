@@ -13,7 +13,7 @@ public class GreetingService
     /// <returns>
     ///     時間帯に応じた挨拶文字列
     /// </returns>
-    public static string Greet(int hour)
+    public string Greet(int hour)
     {
         // 朝の時間帯(7時～11時)の場合
         // hour > 6  ＝ 7時以降 、hour < 12 ＝ 11時まで

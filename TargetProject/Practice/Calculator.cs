@@ -10,7 +10,7 @@ public class Calculator
     /// <param name="x">加算する値またはnull</param>
     /// <param name="y">加算する値またはnull</param>
     /// <returns>加算結果またはnull</returns>
-    public static int? Add(int? x, int? y)
+    public int? Add(int? x, int? y)
     {
         return x + y;
     }
