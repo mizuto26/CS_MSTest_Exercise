@@ -1,5 +1,4 @@
 using TargetProject.Chap02;
-
 namespace TestProject.Chap02;
 
 [TestClass]

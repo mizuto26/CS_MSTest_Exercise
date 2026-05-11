@@ -6,6 +6,7 @@ public class CalculatorDataRowTests
 {
     private Calculator? calculator;
 
+    [TestInitialize]
     public void SetUp()
     {
         calculator = new Calculator();
